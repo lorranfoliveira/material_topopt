@@ -125,13 +125,15 @@ representative_volume_element_parameters = \
     }
 
 # Letter G
-fixed_boundary_nodesets = {"Fixed X Displacement Nodesets": ["G_start_nodeset"],
-                           "Fixed Y Displacement Nodesets": ["G_start_nodeset"]}
-applied_load_1 = {"Nodeset": "G_finish_nodeset", "Load in X direction": 1.0, "Load in Y direction": 0.0}
+fixed_boundary_nodesets = {"Fixed X Displacement Nodesets": ["top_edge_nodeset"],
+                           "Fixed Y Displacement Nodesets": ["top_edge_nodeset"]}
+applied_load_1 = {"Nodeset": "right_edge_nodeset",
+                  "Load in X direction": 1.0,
+                  "Load in Y direction": 0.0}
 applied_loads = [applied_load_1]
 macroscale_problem_parameters = \
     {
-        "macroscale finite element mesh filepath": "tools/letterG.inp",
+        "macroscale finite element mesh filepath": "lbracket.inp",
         "fixed boundary condition nodesets": fixed_boundary_nodesets,
         "applied loads": applied_loads,
         "output directory path": output_directory_path
